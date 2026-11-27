@@ -1,37 +1,156 @@
 {
-  "id": "./",
   "name": "2026 Electrical Design Guide",
-  "short_name": "Elec Design 2026",
-  "description": "Offline-first electrical design guide and engineering calculators: lighting, voltage drop, conduit, conductors, OCPD, load balancing, equipment, grounding and CT/PT metering.",
+  "short_name": "2026 ElecDesign",
+  "description": "Offline-first 2026 electrical engineering reference and interactive calculators for illumination, general design, conduit sizing, conductor sizing, OCPD, 3-phase load balancing, equipment sizing, grounding, and metering.",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "any",
-  "background_color": "#071626",
-  "theme_color": "#0a2540",
+  "background_color": "#F4F8F8",
+  "theme_color": "#0F6B6B",
+  "categories": [
+    "utilities",
+    "productivity",
+    "education"
+  ],
   "lang": "en",
   "dir": "ltr",
-  "categories": ["utilities", "productivity", "education"],
   "icons": [
-    { "src": "icons/icon-72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
-  ],
-  "screenshots": [
-    { "src": "screenshots/screenshot-narrow.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "Conductor sizing calculator on a phone" },
-    { "src": "screenshots/screenshot-wide.png", "sizes": "1920x1080", "type": "image/png", "form_factor": "wide", "label": "Module overview on desktop" }
+    {
+      "src": "./icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
-    { "name": "Conductor Sizing", "short_name": "Conductors", "url": "./#/m/conductor", "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Conduit Fill", "short_name": "Conduit", "url": "./#/m/conduit", "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Saved Calculations", "short_name": "Saved", "url": "./#/saved", "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Design Review Checklist", "short_name": "Checklist", "url": "./#/checklist", "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png" }] }
+    {
+      "name": "Conductor Sizing",
+      "short_name": "Conductors",
+      "description": "1-Ph & 3-Ph ampacity and voltage drop sizing",
+      "url": "./#/module/conductor",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Conduit Sizing",
+      "short_name": "Conduit Fill",
+      "description": "53% / 31% / 40% conduit fill calculator",
+      "url": "./#/module/conduit",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "3-Phase Load Balancer",
+      "short_name": "Load Balance",
+      "description": "Panelboard phase balance and neutral current",
+      "url": "./#/module/balance",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Saved Design Sheets",
+      "short_name": "Saved",
+      "description": "View saved offline project calculations",
+      "url": "./#/saved",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./screenshots/screenshot-narrow.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "2026 Electrical Design Guide mobile workspace and interactive calculators"
+    },
+    {
+      "src": "./screenshots/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "2026 Electrical Design Guide desktop engineering reference and 3-phase tools"
+    }
   ]
 }

@@ -1,99 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="system">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>2026 Electrical Design Guide — Offline Engineering Toolkit</title>
-  <meta name="description" content="Offline-first 2026 Electrical Design Guide: lighting, voltage drop, conduit fill, conductor and OCPD sizing, 3-phase load balancing, transformer and generator sizing, grounding and CT/PT metering calculators.">
-  <meta name="theme-color" content="#0a2540" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#071626" media="(prefers-color-scheme: dark)">
-  <meta name="color-scheme" content="light dark">
-  <meta name="application-name" content="2026 Electrical Design Guide">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>2026 Electrical Design Guide — Engineering Reference & Calculators</title>
+  <meta name="description" content="Offline-first 2026 Electrical Design Guide PWA with 9 interactive engineering modules: illumination, general design, conduit sizing, conductor sizing, OCPD, 3-phase load balancing, equipment sizing, grounding, and metering.">
+  <meta name="keywords" content="2026 electrical design, electrical engineering calculators, lumen method, conduit fill, conductor sizing, voltage drop, OCPD sizing, 3-phase load balancing, EGC GEC grounding, CT PT metering">
+  <meta name="author" content="2026 Electrical Design Guide">
+  <link rel="canonical" href="https://githubbest729.github.io/electricaldesign/">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Elec Design 2026">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-
-  <link rel="canonical" href="https://githubbest729.github.io/electricaldesign/">
-
+  <meta name="apple-mobile-web-app-title" content="2026 ElecDesign">
+  <meta name="theme-color" content="#0F6B6B" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1519" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="2026 Electrical Design Guide">
   <meta property="og:title" content="2026 Electrical Design Guide — Offline Engineering Toolkit">
-  <meta property="og:description" content="Nine interactive electrical design modules with calculators that work 100% offline: illumination, voltage drop, conduit fill, conductor and OCPD sizing, load balancing, equipment, grounding and CT/PT metering.">
+  <meta property="og:description" content="Complete 2026 electrical design guide and 9 interactive 1-phase & 3-phase calculators: lighting, conduit fill, conductor sizing, OCPD, load balancing, equipment, grounding, and CT/PT metering.">
   <meta property="og:url" content="https://githubbest729.github.io/electricaldesign/">
   <meta property="og:image" content="https://githubbest729.github.io/electricaldesign/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="2026 Electrical Design Guide with a lightning bolt logo on a navy background">
-  <meta property="og:locale" content="en_US">
-
+  <meta property="og:image:alt" content="2026 Electrical Design Guide PWA banner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="2026 Electrical Design Guide — Offline Engineering Toolkit">
-  <meta name="twitter:description" content="Nine interactive electrical design modules and calculators that work offline after the first load.">
+  <meta name="twitter:title" content="2026 Electrical Design Guide">
+  <meta name="twitter:description" content="Offline-first 2026 electrical engineering reference and 9 interactive 1-Ph & 3-Ph design calculators.">
   <meta name="twitter:image" content="https://githubbest729.github.io/electricaldesign/images/og-image.png">
-  <meta name="twitter:image:alt" content="2026 Electrical Design Guide with a lightning bolt logo on a navy background">
-
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <link rel="stylesheet" href="./css/styles.css">
-  <script src="./js/app.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#view">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="sidebar-brand">
+        <a href="#/home" class="brand-link" aria-label="2026 Electrical Design Guide Home">
+          <img src="./favicon.svg" alt="" width="36" height="36" class="brand-logo">
+          <div class="brand-text">
+            <strong>2026 ElecDesign</strong>
+            <span>Electrical Design Guide</span>
+          </div>
+        </a>
+      </div>
+      <nav class="side-nav" aria-label="Workspace sections">
+        <div class="nav-group-label">Workspace</div>
+        <a href="#/home" class="nav-item" data-route="home">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6.5h-5V21H4a1 1 0 0 1-1-1v-9.5z"/></svg>
+          <span>Overview</span>
+        </a>
+        <a href="#/calculators" class="nav-item" data-route="calculators">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="10" y2="11"/><line x1="14" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="10" y2="15"/><line x1="14" y1="15" x2="16" y2="15"/><line x1="8" y1="19" x2="16" y2="19"/></svg>
+          <span>All 9 Modules</span>
+        </a>
+        <a href="#/standards" class="nav-item" data-route="standards">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>2026 Standards</span>
+        </a>
+        <a href="#/saved" class="nav-item" data-route="saved">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span>Saved Sheets</span>
+          <span class="nav-count" id="saved-count-side" hidden>0</span>
+        </a>
+        <a href="#/checklist" class="nav-item" data-route="checklist">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span>QA Checklist</span>
+        </a>
+        <div class="nav-group-label">9 Design Modules</div>
+        <div id="sidebar-modules" class="side-modules"></div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-pill" id="net-status-side" role="status" aria-live="polite">
+          <span class="dot"></span>
+          <span>Offline Ready</span>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline install-trigger" hidden>Install App</button>
+      </div>
+    </aside>
 
-  <header class="topbar">
-    <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <a class="brand" href="#/home" aria-label="2026 Electrical Design Guide — home">
-      <img src="./icons/icon-96.png" width="34" height="34" alt="">
-      <span class="brand-text"><strong>2026 Electrical</strong> Design Guide</span>
-    </a>
-    <div class="search">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="search" type="search" placeholder="Search modules, formulas, tables…" aria-label="Search all modules, formulas and tables" autocomplete="off" spellcheck="false">
-      <kbd aria-hidden="true">/</kbd>
+    <div class="main-column">
+      <header class="topbar" role="banner">
+        <div class="topbar-left">
+          <a href="#/home" class="mobile-brand" aria-label="2026 Electrical Design Guide Home">
+            <img src="./favicon.svg" alt="" width="30" height="30">
+            <span>2026 ElecDesign</span>
+          </a>
+          <div class="page-crumb" id="page-crumb" aria-live="polite">Overview</div>
+        </div>
+        <div class="topbar-search">
+          <label for="global-search" class="sr-only">Search 2026 electrical design modules, formulas, and tables</label>
+          <div class="search-wrap">
+            <svg class="search-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input id="global-search" type="search" placeholder="Search modules, formulas, lux, fill, EGC, CT..." autocomplete="off" aria-controls="search-results" aria-expanded="false">
+            <button type="button" id="search-clear" class="search-clear" aria-label="Clear search" hidden>×</button>
+          </div>
+          <div id="search-results" class="search-popover" role="listbox" hidden></div>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-pill compact" id="net-status-top" role="status" aria-live="polite" title="Connection status">
+            <span class="dot"></span>
+            <span class="status-label">Online</span>
+          </span>
+          <button type="button" class="icon-btn install-trigger" id="install-btn-top" aria-label="Install app" title="Install PWA" hidden>
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+          <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch color theme" title="Theme: System">
+            <svg class="ic" id="theme-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+      <main id="main-content" class="main-content" tabindex="-1">
+        <div class="loading-skeleton" aria-busy="true">
+          <div class="skel-line skel-title"></div>
+          <div class="skel-line skel-sub"></div>
+          <div class="skel-grid">
+            <div class="skel-card"></div><div class="skel-card"></div><div class="skel-card"></div>
+          </div>
+        </div>
+      </main>
+      <footer class="app-footer">
+        <p><strong>2026 Electrical Design Guide</strong> · Offline-First PWA · Verify final construction drawings against local PEC/NEC/IEC editions and AHJ requirements.</p>
+      </footer>
     </div>
-    <div class="top-actions">
-      <span id="netStatus" class="pill pill-online" role="status" aria-live="polite">Online</span>
-      <button id="installBtn" class="btn btn-sm btn-accent" type="button" hidden>Install app</button>
-      <button id="themeBtn" class="icon-btn" type="button" aria-label="Switch color theme" title="Switch color theme">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
-      </button>
-    </div>
-  </header>
-
-  <div class="shell">
-    <nav id="sidebar" class="sidebar" aria-label="Main navigation"></nav>
-    <div id="scrim" class="scrim" hidden></div>
-    <main id="view" tabindex="-1" aria-live="off"></main>
   </div>
 
-  <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="#/home" class="bnav-item" data-route="home">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6.5h-5V21H4a1 1 0 0 1-1-1v-9.5z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#/calculators" class="bnav-item" data-route="calculators">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="10" y2="11"/><line x1="14" y1="11" x2="16" y2="11"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+      <span>Modules</span>
+    </a>
+    <a href="#/standards" class="bnav-item" data-route="standards">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>2026</span>
+    </a>
+    <a href="#/saved" class="bnav-item" data-route="saved">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span>Saved</span>
+      <span class="bnav-dot" id="saved-count-mobile" hidden></span>
+    </a>
+    <a href="#/checklist" class="bnav-item" data-route="checklist">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <span>Checklist</span>
+    </a>
+  </nav>
 
-  <dialog id="iosSheet" class="sheet" aria-labelledby="iosTitle">
-    <form method="dialog">
-      <h2 id="iosTitle">Install on your device</h2>
-      <p><strong>iPhone / iPad (Safari):</strong></p>
-      <ol>
-        <li>Tap the <strong>Share</strong> button in the Safari toolbar.</li>
-        <li>Scroll down and choose <strong>Add to Home Screen</strong>.</li>
-        <li>Tap <strong>Add</strong>. The guide opens full-screen and works offline.</li>
-      </ol>
-      <p><strong>Android / desktop (Chrome, Edge):</strong> use the <strong>Install app</strong> button in the header, or the install icon in the address bar.</p>
-      <div class="sheet-actions"><button class="btn btn-accent" value="close">Got it</button></div>
-    </form>
-  </dialog>
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h2 id="modal-title">Dialog</h2>
+        <button type="button" class="icon-btn" id="modal-close" aria-label="Close dialog">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
 
-  <div id="printSheet" class="print-only" aria-hidden="true"></div>
-
-  <noscript>
-    <div class="noscript">The 2026 Electrical Design Guide needs JavaScript to run its calculators. Please enable JavaScript and reload.</div>
-  </noscript>
+  <div id="toasts" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+  <script src="./js/app.js" defer></script>
 </body>
 </html>
