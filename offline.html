@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offline — 2026 Electrical Design Guide</title>
+  <meta name="theme-color" content="#0a2540">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #071626; color: #e8eef7; }
+    main { max-width: 460px; text-align: center; }
+    img { width: 96px; height: 96px; border-radius: 22px; }
+    h1 { font-size: 1.5rem; margin: 18px 0 8px; }
+    p { color: #b7c4d8; line-height: 1.55; margin: 0 0 14px; }
+    .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    a, button { font: inherit; font-weight: 600; padding: 11px 18px; border-radius: 10px; border: 0; cursor: pointer; text-decoration: none; }
+    .primary { background: #ffb400; color: #1a1200; }
+    .secondary { background: #14304f; color: #e8eef7; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #5cc8ff; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="./icons/icon-192.png" alt="" width="96" height="96">
+    <h1>You're offline</h1>
+    <p>This page isn't saved on your device yet. Once the app has loaded once while online, every module, calculator and saved calculation is available without a connection.</p>
+    <p>Reconnect and try again, or open the guide if it was already installed.</p>
+    <div class="row">
+      <button class="primary" type="button" onclick="location.reload()">Try again</button>
+      <a class="secondary" href="./">Open the guide</a>
+    </div>
+  </main>
+</body>
+</html>

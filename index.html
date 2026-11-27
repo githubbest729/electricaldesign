@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>2026 Electrical Design Guide — Offline Engineering Toolkit</title>
+  <meta name="description" content="Offline-first 2026 Electrical Design Guide: lighting, voltage drop, conduit fill, conductor and OCPD sizing, 3-phase load balancing, transformer and generator sizing, grounding and CT/PT metering calculators.">
+  <meta name="theme-color" content="#0a2540" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#071626" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="application-name" content="2026 Electrical Design Guide">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Elec Design 2026">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+
+  <link rel="canonical" href="https://githubbest729.github.io/electricaldesign/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="2026 Electrical Design Guide">
+  <meta property="og:title" content="2026 Electrical Design Guide — Offline Engineering Toolkit">
+  <meta property="og:description" content="Nine interactive electrical design modules with calculators that work 100% offline: illumination, voltage drop, conduit fill, conductor and OCPD sizing, load balancing, equipment, grounding and CT/PT metering.">
+  <meta property="og:url" content="https://githubbest729.github.io/electricaldesign/">
+  <meta property="og:image" content="https://githubbest729.github.io/electricaldesign/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="2026 Electrical Design Guide with a lightning bolt logo on a navy background">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2026 Electrical Design Guide — Offline Engineering Toolkit">
+  <meta name="twitter:description" content="Nine interactive electrical design modules and calculators that work offline after the first load.">
+  <meta name="twitter:image" content="https://githubbest729.github.io/electricaldesign/images/og-image.png">
+  <meta name="twitter:image:alt" content="2026 Electrical Design Guide with a lightning bolt logo on a navy background">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="brand" href="#/home" aria-label="2026 Electrical Design Guide — home">
+      <img src="./icons/icon-96.png" width="34" height="34" alt="">
+      <span class="brand-text"><strong>2026 Electrical</strong> Design Guide</span>
+    </a>
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Search modules, formulas, tables…" aria-label="Search all modules, formulas and tables" autocomplete="off" spellcheck="false">
+      <kbd aria-hidden="true">/</kbd>
+    </div>
+    <div class="top-actions">
+      <span id="netStatus" class="pill pill-online" role="status" aria-live="polite">Online</span>
+      <button id="installBtn" class="btn btn-sm btn-accent" type="button" hidden>Install app</button>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav id="sidebar" class="sidebar" aria-label="Main navigation"></nav>
+    <div id="scrim" class="scrim" hidden></div>
+    <main id="view" tabindex="-1" aria-live="off"></main>
+  </div>
+
+  <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <dialog id="iosSheet" class="sheet" aria-labelledby="iosTitle">
+    <form method="dialog">
+      <h2 id="iosTitle">Install on your device</h2>
+      <p><strong>iPhone / iPad (Safari):</strong></p>
+      <ol>
+        <li>Tap the <strong>Share</strong> button in the Safari toolbar.</li>
+        <li>Scroll down and choose <strong>Add to Home Screen</strong>.</li>
+        <li>Tap <strong>Add</strong>. The guide opens full-screen and works offline.</li>
+      </ol>
+      <p><strong>Android / desktop (Chrome, Edge):</strong> use the <strong>Install app</strong> button in the header, or the install icon in the address bar.</p>
+      <div class="sheet-actions"><button class="btn btn-accent" value="close">Got it</button></div>
+    </form>
+  </dialog>
+
+  <div id="printSheet" class="print-only" aria-hidden="true"></div>
+
+  <noscript>
+    <div class="noscript">The 2026 Electrical Design Guide needs JavaScript to run its calculators. Please enable JavaScript and reload.</div>
+  </noscript>
+</body>
+</html>
