@@ -1,0 +1,50 @@
+/* 2026 Electrical Design Guide — styles */
+:root {
+  --bg: #f3f6fa; --surface: #ffffff; --surface-2: #eef2f8; --ink: #0f1d2e; --ink-2: #44566c; --line: #d6dfeb;
+  --brand: #0a2540; --brand-2: #12457a; --accent: #ffb400; --accent-ink: #1a1200; --link: #0b63b6;
+  --ok: #157f3b; --ok-bg: #e3f5e9; --warn: #946200; --warn-bg: #fff3d1; --bad: #b3261e; --bad-bg: #fde8e6;
+  --info-bg: #e6f1fb; --shadow: 0 1px 2px rgba(10,37,64,.08), 0 6px 20px rgba(10,37,64,.06);
+  --radius: 14px; --topbar-h: 62px; --side-w: 272px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+:root[data-theme="dark"] {
+  --bg: #071626; --surface: #0d2238; --surface-2: #11304e; --ink: #e8eef7; --ink-2: #a9b9cf; --line: #1d3a5a;
+  --brand: #071626; --link: #6cbcff; --ok: #5fd98a; --ok-bg: #0f3321; --warn: #ffcf5c; --warn-bg: #3a2c05;
+  --bad: #ff8a80; --bad-bg: #421613; --info-bg: #0f2d4a; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #071626; --surface: #0d2238; --surface-2: #11304e; --ink: #e8eef7; --ink-2: #a9b9cf; --line: #1d3a5a;
+    --brand: #071626; --link: #6cbcff; --ok: #5fd98a; --ok-bg: #0f3321; --warn: #ffcf5c; --warn-bg: #3a2c05;
+    --bad: #ff8a80; --bad-bg: #421613; --info-bg: #0f2d4a; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h) + 14px); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.55; font-size: 16px; }
+img { max-width: 100%; }
+a { color: var(--link); }
+h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 .5em; }
+h1 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.08rem; }
+p { margin: 0 0 .8em; }
+code, .mono { font-family: var(--mono); font-size: .92em; }
+:focus-visible { outline: 3px solid #3b9dff; outline-offset: 2px; border-radius: 6px; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px; z-index: 100; font-weight: 700; }
+.skip:focus { left: 10px; }
+.print-only { display: none; }
+.noscript { padding: 20px; background: var(--warn-bg); color: var(--warn); text-align: center; }
+
+/* Top bar */
+.topbar { position: sticky; top: 0; z-index: 40; height: var(--topbar-h); display: flex; align-items: center; gap: 12px;
+  padding: 0 max(14px, env(safe-area-inset-right)) 0 max(14px, env(safe-area-inset-left)); background: var(--brand); color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; white-space: nowrap; }
+.brand img { border-radius: 9px; }
+.brand-text { font-size: .98rem; }
+.brand-text strong { color: var(--accent); }
+.search { position: relative; flex: 1; max-width: 520px; margin-left: auto; }
+.search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #9fb6d1; pointer-events: none; }
+.search input { width: 100%; height: 40px; border-radius: 10px; border: 1px solid #27517f; background: #0e3153; color: #fff; padding: 0 38px 0 36px; font: inherit; font-size: .95rem; }
+.search input::placeholder { color: #8fa7c4; }
